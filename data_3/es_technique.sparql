@@ -1,0 +1,45 @@
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
+prefix silk:   <http://data.silknow.org/ontology/property/>
+
+SELECT DISTINCT ?obj ?museum ?text ?technique_group 
+
+WHERE {
+  GRAPH ?museum {
+  
+      ?prod ecrm:P108_has_produced ?obj .
+      ?obj a ecrm:E22_Man-Made_Object . }
+{
+      ?obj rdfs:comment ?text . FILTER (lang(?text) = 'es') }
+
+        ?prod ecrm:P32_used_general_technique  ?y . OPTIONAL { ?broaderMaterial (skos:member|skos:narrower)* ?y }
+                 ?y skos:prefLabel ?technique_group FILTER (lang(?technique_group) = 'en')
+             
+
+
+
+                FILTER (
+                        (?y = <http://data.silknow.org/vocabulary/168>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/168> ||
+
+                        (?y = <http://data.silknow.org/vocabulary/87>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/87> ||
+
+                        (?y = <http://data.silknow.org/vocabulary/236>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/236> ||
+
+
+                        (?y = <http://data.silknow.org/vocabulary/366>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/366> ||
+
+
+                        (?y = <http://data.silknow.org/vocabulary/379>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/379> ||
+
+
+                        (?y = <http://data.silknow.org/vocabulary/379>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/379> )
+
+
+FILTER (?museum = <http://data.silknow.org/graph/imatex> || 
+        ?museum = <http://data.silknow.org/graph/garin> || 
+        ?museum = <http://data.silknow.org/graph/cer> )
+
+
+
+}
+

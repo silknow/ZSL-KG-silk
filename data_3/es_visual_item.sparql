@@ -1,0 +1,46 @@
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
+prefix silk:   <http://data.silknow.org/ontology/property/>
+
+SELECT DISTINCT ?obj ?museum ?text ?depict_group 
+
+WHERE {
+  GRAPH ?museum {
+  
+      ?prod ecrm:P108_has_produced ?obj .
+      ?obj a ecrm:E22_Man-Made_Object . }
+{
+      ?obj rdfs:comment ?text . FILTER (lang(?text) = 'es') }
+
+      ?obj ecrm:P65_shows_visual_item  ?z . OPTIONAL { ?broaderMaterial (skos:member|skos:narrower)* ?z }
+                 ?z skos:prefLabel ?depict_group FILTER (lang(?depict_group) = 'en')
+               
+               
+                  FILTER ((?z = <http://data.silknow.org/vocabulary/743>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/743> ||
+
+                        (?z = <http://data.silknow.org/vocabulary/744>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/744> ||
+
+                        (?z = <http://data.silknow.org/vocabulary/745>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/745> ||
+
+
+
+                        (?z = <http://data.silknow.org/vocabulary/768>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/768> ||
+
+                        (?z = <http://data.silknow.org/vocabulary/750>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/750> ||
+                        (?z = <http://data.silknow.org/vocabulary/765>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/765> ||
+                        (?z = <http://data.silknow.org/vocabulary/793>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/793> ||
+                        (?z = <http://data.silknow.org/vocabulary/785>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/785> ||
+                        (?z = <http://data.silknow.org/vocabulary/824>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/824> ||
+                        (?z = <http://data.silknow.org/vocabulary/759>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/759> )
+
+
+
+
+FILTER (?museum = <http://data.silknow.org/graph/imatex> || 
+        ?museum = <http://data.silknow.org/graph/garin> || 
+        ?museum = <http://data.silknow.org/graph/cer> )
+
+
+
+}
+

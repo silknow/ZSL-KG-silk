@@ -1,0 +1,39 @@
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
+prefix silk:   <http://data.silknow.org/ontology/property/>
+
+SELECT DISTINCT ?obj ?museum ?text ?material_group
+
+WHERE {
+  GRAPH ?museum {
+  
+      ?prod ecrm:P108_has_produced ?obj .
+      ?obj a ecrm:E22_Man-Made_Object . }
+{
+      ?obj rdfs:comment ?text }
+
+
+        ?prod ecrm:P126_employed ?x . OPTIONAL { ?broaderMaterial (skos:member|skos:narrower)* ?x }
+                 ?x skos:prefLabel ?material_group FILTER (lang(?material_group) = 'en')
+ 
+   FILTER (
+                    
+
+                        (?x = <http://data.silknow.org/vocabulary/627>) ||  ?broaderMaterial = <http://data.silknow.org/vocabulary/627> ||
+                        (?x = <http://data.silknow.org/vocabulary/628>) ||  ?broaderMaterial = <http://data.silknow.org/vocabulary/628> ||
+                        (?x = <http://data.silknow.org/vocabulary/214>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/628>)
+
+
+
+
+FILTER (contains(str(?museum), "vam") || 
+        contains(str(?museum), "risd") || 
+        contains(str(?museum), "artic") || 
+        contains(str(?museum), "met") || 
+        contains(str(?museum), "mfa") || 
+        contains(str(?museum), "smithsonian") )
+
+
+
+}
+

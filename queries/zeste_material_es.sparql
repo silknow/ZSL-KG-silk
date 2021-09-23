@@ -1,0 +1,36 @@
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
+
+SELECT DISTINCT ?obj ?museum ?text ?material
+WHERE {
+  GRAPH ?museum {
+     ?dig a crmdig:D1_Digital_Object . }
+  
+      ?dig ecrm:P129_is_about ?prod .
+      ?prod ecrm:P108_has_produced ?obj .
+      ?obj a ecrm:E22_Man-Made_Object .
+
+      ?obj rdfs:comment ?text . FILTER (lang(?text) = 'es') 
+
+
+       ?prod ecrm:P126_employed ?material .
+
+                                FILTER (
+                    
+
+                         
+                        (?material = <http://data.silknow.org/vocabulary/627>) || 
+                        (?material = <http://data.silknow.org/vocabulary/628>) || 
+                        (?material = <http://data.silknow.org/vocabulary/214>))
+               
+
+
+
+
+FILTER (?museum = <http://data.silknow.org/graph/imatex> || 
+        ?museum = <http://data.silknow.org/graph/garin> || 
+        ?museum = <http://data.silknow.org/graph/cer> )
+
+
+}
+ORDER BY ?museum

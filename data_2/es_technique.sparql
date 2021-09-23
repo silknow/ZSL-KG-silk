@@ -1,0 +1,26 @@
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
+prefix silk:   <http://data.silknow.org/ontology/property/>
+
+SELECT DISTINCT ?obj ?museum ?text ?technique_group 
+
+WHERE {
+  GRAPH ?museum {
+  
+      ?prod ecrm:P108_has_produced ?obj .
+      ?obj a ecrm:E22_Man-Made_Object . }
+{
+      ?obj rdfs:comment ?text . FILTER (lang(?text) = 'es') }
+
+      ?prod ecrm:P32_used_general_technique  ?y .
+                ?technique_group skos:member ?y FILTER contains(str(?technique_group), "facet")
+               
+
+FILTER (?museum = <http://data.silknow.org/graph/imatex> || 
+        ?museum = <http://data.silknow.org/graph/garin> || 
+        ?museum = <http://data.silknow.org/graph/cer> )
+
+
+
+}
+ORDER BY ?museum

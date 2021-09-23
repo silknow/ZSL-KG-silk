@@ -1,0 +1,41 @@
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
+
+SELECT DISTINCT ?obj ?museum ?text ?visual_item
+WHERE {
+  GRAPH ?museum {
+      ?prod ecrm:P108_has_produced ?obj .
+      ?obj a ecrm:E22_Man-Made_Object . }
+  
+
+
+      ?obj rdfs:comment ?text .
+
+
+       ?obj ecrm:P65_shows_visual_item ?visual_item .
+
+                 FILTER ((?visual_item = <http://data.silknow.org/vocabulary/743>) ||
+
+                        (?visual_item = <http://data.silknow.org/vocabulary/744>) ||
+
+                        (?visual_item = <http://data.silknow.org/vocabulary/745>) ||
+
+                        (?visual_item = <http://data.silknow.org/vocabulary/747>) ||
+
+
+                        (?visual_item = <http://data.silknow.org/vocabulary/761>) ||
+
+
+                        (?visual_item = <http://data.silknow.org/vocabulary/818>))
+               
+
+FILTER (contains(str(?museum), "vam") || 
+        contains(str(?museum), "risd") || 
+        contains(str(?museum), "artic") || 
+        contains(str(?museum), "met") || 
+        contains(str(?museum), "mfa") || 
+        contains(str(?museum), "smithsonian") )
+
+
+}
+ORDER BY ?museum
