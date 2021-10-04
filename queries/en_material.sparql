@@ -21,7 +21,7 @@ WHERE {
 
                         (?x = <http://data.silknow.org/vocabulary/627>) ||  ?broaderMaterial = <http://data.silknow.org/vocabulary/627> ||
                         (?x = <http://data.silknow.org/vocabulary/628>) ||  ?broaderMaterial = <http://data.silknow.org/vocabulary/628> ||
-                        (?x = <http://data.silknow.org/vocabulary/214>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/628>)
+                        (?x = <http://data.silknow.org/vocabulary/214>) || ?broaderMaterial = <http://data.silknow.org/vocabulary/214>)
 
 
 
