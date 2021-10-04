@@ -2,18 +2,18 @@
 
 ## Requirements:
 
-*python 3
-*multiprocessing
-*string
-*pickle
-*numpy
-*pandas
-*nltk
-*tqdm
-*matplotlib
-*seaborn
-*sklearn
-*notebook
+* python 3
+* multiprocessing
+* string
+* pickle
+* numpy
+* pandas
+* nltk
+* tqdm
+* matplotlib
+* seaborn
+* sklearn
+* notebook
 
 ## Instructions: 
 
