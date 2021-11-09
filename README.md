@@ -1,7 +1,7 @@
 # Zero-Shot Information Extraction to Enhance a Knowledge Graph Describing Silk Textiles
 
 
-This repository contains the code for reproducing the results reported in the paper "[Zero-Shot Information Extraction to Enhancea Knowledge Graph Describing Silk Textiles](https://aclanthology.org/2021.latechclfl-1.16/) at the [LaTeCH-CLfL 2021](https://sighum.wordpress.com/events/latech-clfl-2021/) workshop co-located with [EMNLP 2021](https://2021.emnlp.org/).
+This repository contains the code for reproducing the results reported in the paper ["Zero-Shot Information Extraction to Enhancea Knowledge Graph Describing Silk Textiles"](https://aclanthology.org/2021.latechclfl-1.16/) at the [LaTeCH-CLfL 2021](https://sighum.wordpress.com/events/latech-clfl-2021/) workshop co-located with [EMNLP 2021](https://2021.emnlp.org/).
 
 
 ## Requirements
