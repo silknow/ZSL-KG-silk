@@ -36,3 +36,20 @@ These scripts do some basic formatting operatins and make sure that one row repr
 
 ### 3. [Notebooks](https://github.com/silknow/ZSL-KG-silk/tree/main/notebooks)
 Run the notebooks for each property / language combination respectively. The notebooks contain all relevant code and show the results at the bottom. They also produce another CSV file each with the predictions. 
+
+
+### Cite this work
+```
+@inproceedings{schleider-troncy-2021-zero,
+    title = "Zero-Shot Information Extraction to Enhance a Knowledge Graph Describing Silk Textiles",
+    author = "Schleider, Thomas  and
+      Troncy, Raphael",
+    booktitle = "Proceedings of the 5th Joint SIGHUM Workshop on Computational Linguistics for Cultural Heritage, Social Sciences, Humanities and Literature",
+    month = nov,
+    year = "2021",
+    address = "Punta Cana, Dominican Republic (online)",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.latechclfl-1.16",
+    pages = "138--146",
+}
+```
