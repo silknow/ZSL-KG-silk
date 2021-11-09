@@ -18,7 +18,16 @@ conda install --file requirements.txt
 
 ## Instructions 
 
-### 1. [Queries](https://github.com/silknow/ZSL-KG-silk/tree/main/queries)
+
+
+
+### 1. [Language-specific sub-graphs] (https://doi.org/10.5281/zenodo.5660501)
+   First, you need to download two language-specific sub-graphs (English and Spanish) based on the ConceptNet Knowledge Graph hosted on 
+   [Zenodo](https://doi.org/10.5281/zenodo.5660501). The code expects them to be in a folder named "neighborhoods", but this can be changed.
+
+
+
+### 2. [Queries](https://github.com/silknow/ZSL-KG-silk/tree/main/queries)
    Query the [SILKNOW Knowledge graph](https://ada.silknow.org) on https://data.silknow.org/sparql by copy-pasting the content of these SPARQL files. Set "Results    Format" to "CSV" before clicking on "Exectute Query" for each query.
 
    The files are named after language and property type, for example English and material: 
@@ -26,12 +35,12 @@ conda install --file requirements.txt
 
    The resulting CSVs have several columns: "obj" for the object URI, "museum" for the museum URI, "text" for the textual description and a last one for the          property group, which corresponds to the class label. 
 
-### 2. [Scripts](https://github.com/silknow/ZSL-KG-silk/tree/main/preprocessing)
+### 3. [Scripts](https://github.com/silknow/ZSL-KG-silk/tree/main/preprocessing)
 For each language and property combination of the queries there is a preprocessing python script that needs to be run for every query output respectively. If your file names are different, adjust them inside the code.
 
 These scripts do some basic formatting operatins and make sure that one row represents one museum object. If you want to perform a test/train split it is recommended to do it after this step.
 
-### 3. [Notebooks](https://github.com/silknow/ZSL-KG-silk/tree/main/notebooks)
+### 4. [Notebooks](https://github.com/silknow/ZSL-KG-silk/tree/main/notebooks)
 Run the notebooks for each property / language combination respectively. The notebooks contain all relevant code and show the results at the bottom. They also produce another CSV file each with the predictions. 
 
 
