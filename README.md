@@ -36,7 +36,7 @@ conda install --file requirements.txt
    The resulting CSVs have several columns: "obj" for the object URI, "museum" for the museum URI, "text" for the textual description and a last one for the          property group, which corresponds to the class label. 
 
 ### 3. [Scripts](https://github.com/silknow/ZSL-KG-silk/tree/main/preprocessing)
-For each language and property combination of the queries there is a preprocessing python script in t he folder ["scripts"](https://github.com/silknow/ZSL-KG-silk/tree/main/preprocessing) that needs to be run for every query output respectively. If your file names are different, adjust them inside the code.
+For each language and property combination of the queries there is a preprocessing python script in the folder ["scripts"](https://github.com/silknow/ZSL-KG-silk/tree/main/preprocessing) that needs to be run for every query output respectively. If your file names are different, adjust them inside the code.
 
 These scripts do some basic formatting operations and make sure that one row represents one museum object. If you want to perform a test/train split it is recommended to do it after this step.
 
