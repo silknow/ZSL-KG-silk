@@ -23,7 +23,7 @@ conda install --file requirements.txt
 
 ### 1. [Language-specific sub-graphs](https://doi.org/10.5281/zenodo.5660501)
    First, you need to download two language-specific sub-graphs (English and Spanish) based on the ConceptNet Knowledge Graph hosted on 
-   [Zenodo](https://doi.org/10.5281/zenodo.5660501). The code expects them to be in a folder named "neighborhoods", but this can be changed.
+   [Zenodo](https://doi.org/10.5281/zenodo.5660501). The code in the notebook (see 4. Notebooks) expects them to be in a folder named "neighborhoods", but this can be changed.
 
 
 
