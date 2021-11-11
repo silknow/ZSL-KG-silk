@@ -28,7 +28,7 @@ conda install --file requirements.txt
 
 
 ### 2. [Queries](https://github.com/silknow/ZSL-KG-silk/tree/main/queries)
-   Query the [SILKNOW Knowledge graph](https://ada.silknow.org) on https://data.silknow.org/sparql by copy-pasting the content of these SPARQL files. Set "Results    Format" to "CSV" before clicking on "Exectute Query" for each query.
+   Query the [SILKNOW Knowledge graph](https://ada.silknow.org) on https://data.silknow.org/sparql by copy-pasting the content of thes SPARQL file in the folder      ["queries"](https://github.com/silknow/ZSL-KG-silk/tree/main/queries). Set "Results Format" to "CSV" before clicking on "Exectute Query" for each query.
 
    The files are named after language and property type, for example English and material: 
    [en_material.sparql](https://github.com/silknow/ZSL-KG-silk/blob/main/queries/en_material.sparql). The queries can be adjusted, but they are set up as in          the paper, which means that per file only records of specific museums and properties get exported from the SILKNOW Knowledge Graph. The property values are        based on concept URIs from the [SILKNOW Thesaurus](https://skosmos.silknow.org/thesaurus/en/).
