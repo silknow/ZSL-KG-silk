@@ -41,7 +41,7 @@ For each language and property combination of the queries there is a preprocessi
 These scripts do some basic formatting operations and make sure that one row represents one museum object. If you want to perform a test/train split it is recommended to do it after this step.
 
 ### 4. [Notebooks](https://github.com/silknow/ZSL-KG-silk/tree/main/notebooks)
-Run the notebooks for each property / language combination respectively. The notebooks contain all relevant code and show the results at the bottom. They also produce another CSV file each with the predictions. 
+Run the notebooks for each property / language combination respectively. The notebooks contain all relevant code and show the results at the bottom. Each one of them also produces another CSV file with the respective predictions. 
 
 
 ### Cite this work
